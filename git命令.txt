@@ -1,0 +1,75 @@
+作者：廖雪峰
+地址：https://www.liaoxuefeng.com/wiki/896043488029600
+
+
+工作区->add>工作区>commit>版本库
+
+【cd learngit】
+
+
+
+
+
+<创建版本库>
+【git init】初始化Git仓库
+【git add <file>】添加工作区文件到暂存库 可反复多次使用，添加多个文件；
+【git commit -m <message>】添加所有暂存库文件到版本库
+
+<状态查看>
+【git status】查看工作区状态
+【git diff】查看修改内容
+
+<显示commit_id>
+【git show commit_id】显示commit_id信息
+
+
+<版本回退>
+【git reset --hard commit_id】版本回退
+【git log】查看commit历史
+【git reflog】查看命令历史
+
+<删除文件>
+【git rm】删除文件
+【git rm -r *】删除所有文件
+
+<撤销修改>
+【git restore --worktree readme.txt】从暂存区恢复工作区
+【git restore --staged readme.txt】从master恢复暂存区
+【git restore --source=HEAD --staged --worktree readme.txt】从master同时恢复工作区和暂存区 
+
+
+<添加远程库>
+【git remote add origin git@github.com:michaelliao/gitskills.git】添加远程库
+
+<拉取远程库<随机创建新分支处理错误>>
+//https://blog.csdn.net/qican_7/article/details/98870789
+【git pull --rebase origin master】拉取远程库(自动创建分支处理冲突)
+【git rebase --continue】确认处理好冲突后则将调整好的文件添加到暂存区
+
+<拉取远程库>
+【git pull origin master】拉取远程库
+[--allow-unrelated-histories] 可以允许不相关历史提，强制合并，确实解决了这个问题
+
+
+<提交到远程库>
+【git push origin master】提交到远程库
+//【git push -u origin master】提交到远程库<关联, 如果使用了以后可以直接push>
+
+
+<克隆库>
+【git clone git@github.com:michaelliao/gitskills.git】
+
+
+
+
+<stash>
+【git stash】: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+【git stash pop】: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+【git stash list】: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+【git stash clear】: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了
+
+
+
+https://blog.csdn.net/u012693575/article/details/62892059 查看远程更新信息
+
+
