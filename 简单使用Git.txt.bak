@@ -1,32 +1,61 @@
+【pkg install git】安装git
+
+
+【git config --global user.name "Your Name"】设置名称
+【git config --global user.email "email@example.com"】设置邮箱
+
+
+【pkg install openssh】安装openssh
+/home/.ssh 替换为你的key
+
+创建目录拉取Github项目 
+
+--------------------------------
+
 作者：廖雪峰
 地址：https://www.liaoxuefeng.com/wiki/896043488029600
 
-
-工作区->add>工作区>commit>版本库
-
-【cd learngit】
+目录关系：工作区-> add -> 工作区 -> commit ->版本库
 
 
 
 
+【cd 这个目录】
+【git init】初始化git
+【git remote add origin git@github.com:xiaoxinwangluo/gitTest.git】
+添加远程库 
+origin代表远程库的名称 可以随意取
+git@github.com:xiaoxinwangluo/gitTest.git代表地址
 
-<创建版本库>
-【git init】初始化Git仓库
-【git add <file>】添加工作区文件到暂存库 可反复多次使用，添加多个文件；
-【git commit -m <message>】添加所有暂存库文件到版本库
+【git clean -d -fx】
+清除不存在版本库中的文件，建议备份一波
 
-<状态查看>
+
+
+【git pull origin master】
+拉取 远程库origin中的master分支 到工作区
+
 【git status】查看工作区状态
 【git diff】查看修改内容
 
-<显示commit_id>
-【git show commit_id】显示commit_id信息
+【git add --all】
+添加工作区文件到暂存库 可反复多次使用，添加多个文件；
+
+【git commit -m "message"】
+添加所有暂存库文件到版本库
+
+【git push origin master】
+提交更改到 远程库origin中的master分支
+
+
 
 
 <版本回退>
 【git reset --hard commit_id】版本回退
 【git log】查看commit历史
 【git reflog】查看命令历史
+<显示commit_id>
+【git show commit_id】显示commit_id信息
 
 <删除文件>
 【git rm】删除文件
@@ -38,28 +67,8 @@
 【git restore --source=HEAD --staged --worktree readme.txt】从master同时恢复工作区和暂存区 
 
 
-<添加远程库>
-【git remote add origin git@github.com:michaelliao/gitskills.git】添加远程库
-
-<拉取远程库<随机创建新分支处理错误>>
-//https://blog.csdn.net/qican_7/article/details/98870789
-【git pull --rebase origin master】拉取远程库(自动创建分支处理冲突)
-【git rebase --continue】确认处理好冲突后则将调整好的文件添加到暂存区
-
-<拉取远程库>
-【git pull origin master】拉取远程库
-[--allow-unrelated-histories] 可以允许不相关历史提，强制合并，确实解决了这个问题
-
-
-<提交到远程库>
-【git push origin master】提交到远程库
-//【git push -u origin master】提交到远程库<关联, 如果使用了以后可以直接push>
-
-
 <克隆库>
 【git clone git@github.com:michaelliao/gitskills.git】
-
-
 
 
 <stash>
@@ -71,5 +80,6 @@
 
 
 https://blog.csdn.net/u012693575/article/details/62892059 查看远程更新信息
+
 
 
