@@ -50,6 +50,36 @@ git@github.com:xiaoxinwangluo/gitTest.git代表地址
 
 
 
+
+
+<选择分支>
+【git branch -a】
+查看远程分支
+#* master
+#  remotes/origin/HEAD -> origin/master
+#  remotes/origin/master
+#  remotes/origin/nnvm
+#  remotes/origin/piiswrong-patch-1
+#  remotes/origin/v0.9rc1
+
+【git branch】
+查看本地分支
+#* master
+
+【git checkout -b v0.9rc1 origin/v0.9rc1】
+#Branch v0.9rc1 set up to track remote branch v0.9rc1 from origin.
+#Switched to a new branch 'v0.9rc1'
+#已经切换到v0.9rc1分支了
+
+【git checkout master】
+切换为master分支
+#Switched to branch 'master'
+#Your branch is up-to-date with 'origin/master'.
+
+
+
+
+
 <版本回退>
 【git reset --hard commit_id】版本回退
 【git log】查看commit历史
@@ -57,9 +87,17 @@ git@github.com:xiaoxinwangluo/gitTest.git代表地址
 <显示commit_id>
 【git show commit_id】显示commit_id信息
 
+
+
+
+
 <删除文件>
 【git rm】删除文件
 【git rm -r *】删除所有文件
+
+
+
+
 
 <撤销修改>
 【git restore --worktree readme.txt】从暂存区恢复工作区
@@ -67,8 +105,14 @@ git@github.com:xiaoxinwangluo/gitTest.git代表地址
 【git restore --source=HEAD --staged --worktree readme.txt】从master同时恢复工作区和暂存区 
 
 
+
+
+
 <克隆库>
 【git clone git@github.com:michaelliao/gitskills.git】
+
+
+
 
 
 <stash>
